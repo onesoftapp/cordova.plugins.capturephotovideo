@@ -19,8 +19,28 @@
 	<!-- android -->
 	<platform name="android">
 
-		<source-file src="src/android/MicroVideo.java" target-dir="src/cordova/plugins/microvideo" />
-		<source-file src="src/android/MicroVideoActivity.java" target-dir="src/cordova/plugins/microvideo" />
+		<source-file src="src/android/ActivitySupport.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/AlbumAdapter.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/AlbumHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/CameraPreview.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/CapturePhotoActivity.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/CapturePhotoVideo.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/Constant.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/CustomeDialog.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/DataBaseHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/DateUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/DBManager.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/GridviewAdapter.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/IActivitySupport.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/ImageBucket.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/ImageItem.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/ImageManager.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/JsonUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/RoundAngleImageView.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/SDCardSQLiteOpenHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/SQLiteTemplate.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/StringUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
+		<source-file src="src/android/Util.java" target-dir="src/cordova/plugins/capturephotovideo" />
 
 		<config-file target="AndroidManifest.xml" parent="/manifest">
 			<uses-feature android:name="android.hardware.camera" />
