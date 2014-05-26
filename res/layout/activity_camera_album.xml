@@ -24,7 +24,7 @@
             android:layout_centerVertical="true"
             android:background="@drawable/pai_btn" />
 
-        <com.onesoft.cordova.plugins.openalbumandcamera.RoundAngleImageView
+        <cordova.plugins.capturephotovideo.RoundAngleImageView
             android:id="@+id/ablum_btn_main"
             android:layout_width="60.0dp"
             android:layout_height="60.0dp"
