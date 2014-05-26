@@ -51,12 +51,12 @@
 		</config-file>
 
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<activity android:name="cordova.plugins.microvideo.MicroVideoActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+			<activity android:name="cordova.plugins.capturephotovideo.CapturePhotoActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
 		</config-file>
 
 		<config-file target="res/xml/config.xml" parent="/*">
-			<feature name="MicroVideo">
-				<param name="android-package" value="cordova.plugins.microvideo.MicroVideo" />
+			<feature name="CapturePhotoVideo">
+				<param name="android-package" value="cordova.plugins.capturephotovideo.CapturePhotoVideo" />
 			</feature>
 		</config-file>
 
