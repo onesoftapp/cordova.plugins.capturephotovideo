@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="cordova.plugins.capturephotovideo"
+	version="0.1.0">
+
+	<name>CapturePhotoVideo</name>
+	<description>CapturePhotoVideo Plugin</description>
+	<author>Onesoft App(onesoftapp@163.com)</author>
+	<keywords>microvideo,photo,video</keywords>
+	<license>Apache 2.0</license>
+	<repo>https://github.com/onesoftapp/cordova.plugins.capturephotovideo.git</repo>
+	<issue>https://github.com/onesoftapp/cordova.plugins.capturephotovideo/issues</issue>
+
+	<js-module src="www/CapturePhotoVideo.js" name="capturePhotoVideo">
+		<clobbers target="navigator.capturePhotoVideo" />
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+
+		<source-file src="src/android/MicroVideo.java" target-dir="src/cordova/plugins/microvideo" />
+		<source-file src="src/android/MicroVideoActivity.java" target-dir="src/cordova/plugins/microvideo" />
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-feature android:name="android.hardware.camera" />
+			<uses-feature android:name="android.hardware.camera.autofocus" />
+			<uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.RECORD_AUDIO" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="cordova.plugins.microvideo.MicroVideoActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+		</config-file>
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="MicroVideo">
+				<param name="android-package" value="cordova.plugins.microvideo.MicroVideo" />
+			</feature>
+		</config-file>
+
+	</platform>
+
+</plugin>
