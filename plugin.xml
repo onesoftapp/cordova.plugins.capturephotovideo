@@ -42,6 +42,24 @@
 		<source-file src="src/android/StringUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
 		<source-file src="src/android/Util.java" target-dir="src/cordova/plugins/capturephotovideo" />
 
+		<source-file src="res/drawable/pai_btn.xml" target-dir="res\drawable" />
+		<source-file src="res/drawable/pp_bg_dialog.xml" target-dir="res\drawable" />
+		<source-file src="res/drawable/top_bg.xml" target-dir="res\drawable" />
+		<source-file src="res/drawable/top_bg2.xml" target-dir="res\drawable" />
+		<source-file src="res/drawable-hdpi/action_bar_light_glyph_back.png" target-dir="res\drawable-hdpi" />
+		<source-file src="res/drawable-hdpi/album.png" target-dir="res\drawable-hdpi" />
+		<source-file src="res/drawable-hdpi/back25.png" target-dir="res\drawable-hdpi" />
+		<source-file src="res/drawable-hdpi/back40.png" target-dir="res\drawable-hdpi" />
+		<source-file src="res/drawable-hdpi/pai50.png" target-dir="res\drawable-hdpi" />
+		<source-file src="res/drawable-hdpi/pai90.png" target-dir="res\drawable-hdpi" />
+		<source-file src="res/drawable-hdpi/pai_pressed.png" target-dir="res\drawable-hdpi" />
+		<source-file src="res/layout/activity_album_detail.xml" target-dir="res\layout" />
+		<source-file src="res/layout/activity_camera_album.xml" target-dir="res\layout" />
+		<source-file src="res/layout/dialog_layout2.xml" target-dir="res\layout" />
+		<source-file src="res/layout/fragment_main.xml" target-dir="res\layout" />
+		<source-file src="res/layout/item_image_grid.xml" target-dir="res\layout" />
+		<source-file src="res/layout/listview_item_album.xml" target-dir="res\layout" />
+
 		<config-file target="AndroidManifest.xml" parent="/manifest">
 			<uses-feature android:name="android.hardware.camera" />
 			<uses-feature android:name="android.hardware.camera.autofocus" />
