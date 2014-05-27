@@ -61,7 +61,7 @@ public class CapturePhotoVideo extends CordovaPlugin {
 			intent.putExtra("CompressHeight", CompressHeight);
 			intent.putExtra("CompressWidth", CompressWidth);
 			intent.setClassName(cordova.getActivity(),
-					"com.onesoft.cordova.plugins.openalbumandcamera.CapturePhotoActivity");
+					"cordova.plugins.capturephotovideo.CapturePhotoActivity");
 			cordova.startActivityForResult(this, intent, CAMERA_PHOTO);
 			return true;
 		} else {
@@ -73,7 +73,7 @@ public class CapturePhotoVideo extends CordovaPlugin {
 		if (callbackContext != null) {
 			Intent intent = new Intent()
 					.setClassName(cordova.getActivity(),
-							"com.onesoft.cordova.plugins.openalbumandcamera.CaptureVideoActivity");
+							"cordova.plugins.capturephotovideo.CaptureVideoActivity");
 			cordova.startActivityForResult(this, intent, APTURE_VIDEO);
 			return true;
 		} else {
