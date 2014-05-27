@@ -56,7 +56,6 @@
 		<source-file src="res/layout/activity_album_detail.xml" target-dir="res/layout" />
 		<source-file src="res/layout/activity_camera_album.xml" target-dir="res/layout" />
 		<source-file src="res/layout/dialog_layout2.xml" target-dir="res/layout" />
-		<source-file src="res/layout/fragment_main.xml" target-dir="res/layout" />
 		<source-file src="res/layout/item_image_grid.xml" target-dir="res/layout" />
 		<source-file src="res/layout/listview_item_album.xml" target-dir="res/layout" />
 
