@@ -4,12 +4,12 @@
     android:layout_height="match_parent" >
 
     <FrameLayout
-        android:id="@+id/camera_preview"
+        android:id="@id/camera_preview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 
     <RelativeLayout
-        android:id="@+id/camera_layout"
+        android:id="@id/camera_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -17,7 +17,7 @@
         android:visibility="visible" >
 
         <Button
-            android:id="@+id/camera_btn_main"
+            android:id="@id/camera_btn_main"
             android:layout_width="77dp"
             android:layout_height="77dp"
             android:layout_centerHorizontal="true"
@@ -25,7 +25,7 @@
             android:background="@drawable/pai_btn" />
 
         <cordova.plugins.capturephotovideo.RoundAngleImageView
-            android:id="@+id/ablum_btn_main"
+            android:id="@id/ablum_btn_main"
             android:layout_width="60.0dp"
             android:layout_height="60.0dp"
             android:layout_centerVertical="true"
@@ -34,7 +34,7 @@
             android:scaleType="fitXY" />
 
         <TextView
-            android:id="@+id/text"
+            android:id="@id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/ablum_btn_main"
@@ -53,27 +53,27 @@
         android:padding="10.0dip" >
 
         <Button
-            android:id="@+id/back1_btn"
+            android:id="@id/back1_btn"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:background="@drawable/back25" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/album_layout"
+        android:id="@id/album_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" >
 
         <RelativeLayout
-            android:id="@+id/top_layout"
+            android:id="@id/top_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/top_bg2"
             android:padding="10.0dip" >
 
             <Button
-                android:id="@+id/back2_btn"
+                android:id="@id/back2_btn"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/back25" />
@@ -89,7 +89,7 @@
         </RelativeLayout>
 
         <ListView
-            android:id="@+id/listview"
+            android:id="@id/listview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_below="@id/top_layout"
@@ -98,7 +98,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/select_list_picture"
+        android:id="@id/select_list_picture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:descendantFocusability="blocksDescendants"
@@ -106,20 +106,20 @@
         android:visibility="gone" >
 
         <RelativeLayout
-            android:id="@+id/top"
+            android:id="@id/top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/top_bg"
             android:padding="10.0dip" >
 
             <Button
-                android:id="@+id/back3_btn"
+                android:id="@id/back3_btn"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/back25" />
 
             <TextView
-                android:id="@+id/complete_tv"
+                android:id="@id/complete_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -130,7 +130,7 @@
         </RelativeLayout>
 
         <GridView
-            android:id="@+id/gridview"
+            android:id="@id/gridview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/top"
@@ -149,27 +149,27 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/preview_photo"
+        android:id="@id/preview_photo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" >
 
         <RelativeLayout
-            android:id="@+id/top_layout"
+            android:id="@id/top_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/top_bg"
             android:padding="10.0dip">
 
             <Button
-                android:id="@+id/back4_btn"
+                android:id="@id/back4_btn"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerVertical="true"
                 android:background="@drawable/back25" />
 
             <TextView
-                android:id="@+id/complete1_tv"
+                android:id="@id/complete1_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -180,7 +180,7 @@
         </RelativeLayout>
 
         <ImageView
-            android:id="@+id/preview_img"
+            android:id="@id/preview_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/top_layout" />

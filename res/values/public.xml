@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <public id="0x7f050000" name="ablumName_tv" type="id" />
+    <public id="0x7f050001" name="ablumNum_tv" type="id" />
+    <public id="0x7f050002" name="ablum_btn_main" type="id" />
+    <public id="0x7f050003" name="ablum_img" type="id" />
+    <public id="0x7f050004" name="album_layout" type="id" />
+    <public id="0x7f050005" name="back1_btn" type="id" />
+    <public id="0x7f050006" name="back2_btn" type="id" />
+    <public id="0x7f050007" name="back3_btn" type="id" />
+    <public id="0x7f050008" name="back4_btn" type="id" />
+    <public id="0x7f050009" name="camera_btn_main" type="id" />
+    <public id="0x7f05000a" name="camera_layout" type="id" />
+    <public id="0x7f05000b" name="camera_preview" type="id" />
+    <public id="0x7f05000c" name="complete1_tv" type="id" />
+    <public id="0x7f05000d" name="complete_tv" type="id" />
+    <public id="0x7f05000e" name="gridview" type="id" />
+    <public id="0x7f05000f" name="image" type="id" />
+    <public id="0x7f050010" name="listview" type="id" />
+    <public id="0x7f050011" name="message" type="id" />
+    <public id="0x7f050012" name="preview_img" type="id" />
+    <public id="0x7f050013" name="preview_photo" type="id" />
+    <public id="0x7f050014" name="root_layout" type="id" />
+    <public id="0x7f050015" name="select_cb" type="id" />
+    <public id="0x7f050016" name="select_list_picture" type="id" />
+    <public id="0x7f050017" name="text" type="id" />
+    <public id="0x7f050018" name="top" type="id" />
+    <public id="0x7f050019" name="top_layout" type="id" />
+    <public id="0x7f030000" name="activity_album_detail" type="layout" />
+    <public id="0x7f030001" name="activity_camera_album" type="layout" />
+    <public id="0x7f030002" name="dialog_layout2" type="layout" />
+    <public id="0x7f030003" name="item_image_grid" type="layout" />
+    <public id="0x7f030004" name="listview_item_album" type="layout" />
+    <public id="0x7f020000" name="action_bar_light_glyph_back" type="drawable" />
+    <public id="0x7f020001" name="album" type="drawable" />
+    <public id="0x7f020002" name="back25" type="drawable" />
+    <public id="0x7f020003" name="back40" type="drawable" />
+    <public id="0x7f020004" name="ic_launcher" type="drawable" />
+    <public id="0x7f020005" name="pai50" type="drawable" />
+    <public id="0x7f020006" name="pai90" type="drawable" />
+    <public id="0x7f020007" name="pai_btn" type="drawable" />
+    <public id="0x7f020008" name="pai_pressed" type="drawable" />
+    <public id="0x7f020009" name="pp_bg_dialog" type="drawable" />
+    <public id="0x7f02000a" name="top_bg" type="drawable" />
+    <public id="0x7f02000b" name="top_bg2" type="drawable" />
+    <public id="0x7f070000" name="Theme_dialog" type="style" />
+</resources>
