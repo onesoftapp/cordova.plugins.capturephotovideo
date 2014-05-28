@@ -50,6 +50,7 @@
 		<source-file src="res/drawable-hdpi/album.png" target-dir="res/drawable-hdpi" />
 		<source-file src="res/drawable-hdpi/back25.png" target-dir="res/drawable-hdpi" />
 		<source-file src="res/drawable-hdpi/back40.png" target-dir="res/drawable-hdpi" />
+		<source-file src="res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-hdpi" />
 		<source-file src="res/drawable-hdpi/pai50.png" target-dir="res/drawable-hdpi" />
 		<source-file src="res/drawable-hdpi/pai90.png" target-dir="res/drawable-hdpi" />
 		<source-file src="res/drawable-hdpi/pai_pressed.png" target-dir="res/drawable-hdpi" />
@@ -61,6 +62,7 @@
 		<source-file src="res/values/attr.xml" target-dir="res/values" />
 		<source-file src="res/values/ids.xml" target-dir="res/values" />
 		<source-file src="res/values/public.xml" target-dir="res/values" />
+		<source-file src="res/values/styles.xml" target-dir="res/values" />
 
 		<config-file target="AndroidManifest.xml" parent="/manifest">
 			<uses-feature android:name="android.hardware.camera" />
