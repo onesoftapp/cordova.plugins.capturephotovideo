@@ -82,13 +82,6 @@
 			</feature>
 		</config-file>
 
-		<config-file target="res/values/styles.xml" parent="/*">
-			<style name="Theme_dialog" parent="@android:style/Theme.Dialog">
-				<item name="android:windowBackground">@android:color/transparent</item>
-				<item name="android:windowNoTitle">true</item>
-			</style>
-		</config-file>
-
 	</platform>
 
 </plugin>
