@@ -60,37 +60,41 @@ public class CapturePhotoVideo extends CordovaPlugin {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) throws JSONException {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (Activity.RESULT_OK == resultCode) {
-            switch (requestCode) {
-            case CAMERA_PHOTO:
-                List<String> json = data.getStringArrayListExtra("list");
+        try {
+            if (Activity.RESULT_OK == resultCode) {
+                switch (requestCode) {
+                case CAMERA_PHOTO:
+                    List<String> json = data.getStringArrayListExtra("list");
 
-                System.out.print(json);
+                    System.out.print(json);
 
-                JSONArray path = new JSONArray();
+                    JSONArray path = new JSONArray();
 
-                for (int i = 0, c = json.size(); c > i; i++) {
-                    JSONObject j = JsonUtil.getJson(json.get(i));
-                    String imagePath = j.getString("imagePath");
-                    String imageBase64String = encodeFileToBase64String(imagePath);
-                    String thumbnailPath = j.getString("thumbnailPath");
-                    String thumbnailBase64String = encodeFileToBase64String(thumbnailPath);
-                    j.put("imageBase64String", imageBase64String);
-                    j.put("thumbnailBase64String", thumbnailBase64String);
-                    path.put(j);
+                    for (int i = 0, c = json.size(); c > i; i++) {
+                        JSONObject j = JsonUtil.getJson(json.get(i));
+                        String imagePath = j.getString("imagePath");
+                        String imageBase64String = encodeFileToBase64String(imagePath);
+                        String thumbnailPath = j.getString("thumbnailPath");
+                        String thumbnailBase64String = encodeFileToBase64String(thumbnailPath);
+                        j.put("imageBase64String", imageBase64String);
+                        j.put("thumbnailBase64String", thumbnailBase64String);
+                        path.put(j);
+                    }
+
+                    callbackContext.success(path);
+                    break;
+
+                case APTURE_VIDEO:
+                    break;
                 }
-
-                callbackContext.success(path);
-                break;
-
-            case APTURE_VIDEO:
-                break;
+            } else if (Activity.RESULT_CANCELED == resultCode) {
+                this.failPicture("Camera cancelled.");
             }
-        } else if (Activity.RESULT_CANCELED == resultCode) {
-            this.failPicture("Camera cancelled.");
+        } catch (JSONException e) {
+            System.out.print(e);
         }
     }
 
