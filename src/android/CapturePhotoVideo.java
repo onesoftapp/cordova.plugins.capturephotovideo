@@ -60,7 +60,7 @@ public class CapturePhotoVideo extends CordovaPlugin {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) throws JSONException {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (Activity.RESULT_OK == resultCode) {
