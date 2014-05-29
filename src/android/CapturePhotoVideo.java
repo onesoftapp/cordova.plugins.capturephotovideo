@@ -100,7 +100,7 @@ public class CapturePhotoVideo extends CordovaPlugin {
             .putExtra("CompressWidth", CompressWidth)
             .putExtra("CompressHeight", CompressHeight)
             .putExtra("CompressOption", CompressOption)
-            .setClassName(cordova.getActivity(), CLASS);
+            .setClassName(cordova.getActivity(), CLASS_PHOTO);
             cordova.startActivityForResult(this, intent, CAMERA_PHOTO);
             return true;
         } else {
