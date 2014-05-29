@@ -135,6 +135,8 @@ public class CapturePhotoVideo extends CordovaPlugin {
         } finally {
             stream.close();
         }
+
+        return null;
     }
 
     private void failPicture(String err) {
