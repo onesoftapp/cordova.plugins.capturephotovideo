@@ -125,7 +125,7 @@ public class CapturePhotoVideo extends CordovaPlugin {
 
         try {
             stream = new FileInputStream(file);
-            byte[] bytes = new byte[(int)file.length];
+            byte[] bytes = new byte[(int)file.length()];
 
             if (bytes.length == stream.read(bytes, 0, bytes.length)) {
                 String encodedString = Base64.encodeToString(bytes, Base64.DEFAULT);
