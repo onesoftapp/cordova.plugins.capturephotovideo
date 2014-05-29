@@ -2,46 +2,48 @@ package cordova.plugins.capturephotovideo;
 
 import java.util.List;
 
+import android.app.Activity;
+import android.content.Intent;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import android.app.Activity;
-import android.content.Intent;
 
 public class CapturePhotoVideo extends CordovaPlugin {
 	public static final String TAG = "CapturePhotoVideo";
-	public static final int CAMERA_PHOTO = 100;
+
+	public static final String CLASS_PHOTO = "cordova.plugins.capturephotovideo.CapturePhotoActivity";
+	public static final String CLASS_VIDEO = "cordova.plugins.capturephotovideo.CaptureVideoActivity";
+
 	public static final int APTURE_VIDEO = 200;
-	// 0-100,100表示不压缩,值越小压缩
-	public static int CompressOption = 95;
-	// 压缩相片尺寸
-	public static int CompressHeight = 320;
-	public static int CompressWidth = 280;
+	public static final int CAMERA_PHOTO = 100;
+
+	public static int CompressWidth = 1280;
+	public static int CompressHeight = 800;
+	public static int CompressOption = 75;
+
 	private CallbackContext callbackContext;
 
 	public CapturePhotoVideo() {
+
 	}
 
 	@Override
-	public boolean execute(String action, JSONArray args,
-			CallbackContext callbackContext) throws JSONException {
-
+	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		this.callbackContext = callbackContext;
 
 		if (action.equals("capturePhoto")) {
-
-			if (args != null&&args.length()>0) {
-				if (args.getInt(2) > 0 && args.getInt(2) <= 100) {
-					CompressOption = args.getInt(2);
+			if (null != args && 0 < args.length()) {
+				if (0 < args.getInt(0)) {
+					CompressWidth = args.getInt(0);
 				}
-
-				if (args.getInt(1) > 0) {
+				if (0 < args.getInt(1)) {
 					CompressHeight = args.getInt(1);
 				}
-				if (args.getInt(0) > 0) {
-					CompressWidth = args.getInt(0);
+				if (0 < args.getInt(2) && 100 >= args.getInt(2)) {
+					CompressOption = args.getInt(2);
 				}
 			}
 
@@ -51,17 +53,15 @@ public class CapturePhotoVideo extends CordovaPlugin {
 		} else {
 			return false;
 		}
-
 	}
 
 	private boolean capturePhoto() {
-		if (callbackContext != null) {
-			Intent intent = new Intent();
-			intent.putExtra("CompressOption", CompressOption);
-			intent.putExtra("CompressHeight", CompressHeight);
-			intent.putExtra("CompressWidth", CompressWidth);
-			intent.setClassName(cordova.getActivity(),
-					"cordova.plugins.capturephotovideo.CapturePhotoActivity");
+		if (null != callbackContext) {
+			Intent intent = new Intent()
+			.putExtra("CompressWidth", CompressWidth)
+			.putExtra("CompressHeight", CompressHeight)
+			.putExtra("CompressOption", CompressOption)
+			.setClassName(cordova.getActivity(), CLASS);
 			cordova.startActivityForResult(this, intent, CAMERA_PHOTO);
 			return true;
 		} else {
@@ -70,10 +70,9 @@ public class CapturePhotoVideo extends CordovaPlugin {
 	}
 
 	private boolean captureVideo() {
-		if (callbackContext != null) {
+		if (null != callbackContext) {
 			Intent intent = new Intent()
-					.setClassName(cordova.getActivity(),
-							"cordova.plugins.capturephotovideo.CaptureVideoActivity");
+			.setClassName(cordova.getActivity(), CLASS_VIDEO);
 			cordova.startActivityForResult(this, intent, APTURE_VIDEO);
 			return true;
 		} else {
@@ -89,25 +88,27 @@ public class CapturePhotoVideo extends CordovaPlugin {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		if (resultCode == Activity.RESULT_OK) {
-
+		if (Activity.RESULT_OK == resultCode) {
 			switch (requestCode) {
 			case CAMERA_PHOTO:
 				List<String> json = data.getStringArrayListExtra("list");
 
 				System.out.print(json);
+
 				JSONArray path = new JSONArray();
-				for (int i = 0; i < json.size(); i++) {
+
+				for (int i = 0, c = json.size(); c > i; i++) {
 					JSONObject j = JsonUtil.getJson(json.get(i));
 					path.put(j);
 				}
+
 				callbackContext.success(path);
 				break;
 
 			case APTURE_VIDEO:
-
+				break;
 			}
-		} else if (resultCode == Activity.RESULT_CANCELED) {
+		} else if (Activity.RESULT_CANCELED == resultCode) {
 			this.failPicture("Camera cancelled.");
 		}
 	}
