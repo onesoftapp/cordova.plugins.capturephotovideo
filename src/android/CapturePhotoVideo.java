@@ -74,6 +74,12 @@ public class CapturePhotoVideo extends CordovaPlugin {
 
                 for (int i = 0, c = json.size(); c > i; i++) {
                     JSONObject j = JsonUtil.getJson(json.get(i));
+                    String imagePath = j.getString("imagePath");
+                    String imageBase64String = encodeFileToBase64String(imagePath);
+                    String thumbnailPath = j.getString("thumbnailPath");
+                    String thumbnailBase64String = encodeFileToBase64String(thumbnailPath);
+                    j.put("imageBase64String", imageBase64String);
+                    j.put("thumbnailBase64String", thumbnailBase64String);
                     path.put(j);
                 }
 
