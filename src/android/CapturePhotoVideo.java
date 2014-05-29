@@ -7,8 +7,8 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Base64;
 
-import org.apache.commons.codec.binary.Base64;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
@@ -128,8 +128,7 @@ public class CapturePhotoVideo extends CordovaPlugin {
             byte[] bytes = new byte[(int)file.length];
 
             if (bytes.length == stream.read(bytes, 0, bytes.length)) {
-                byte[] encoded = Base64.encodeBase64(bytes);
-                String encodedString = new String(encoded);
+                String encodedString = Base64.encodeToString(bytes, Base64.DEFAULT);
 
                 return encodedString;
             }
