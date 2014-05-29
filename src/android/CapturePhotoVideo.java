@@ -93,6 +93,8 @@ public class CapturePhotoVideo extends CordovaPlugin {
             } else if (Activity.RESULT_CANCELED == resultCode) {
                 this.failPicture("Camera cancelled.");
             }
+        } catch (IOException e) {
+            System.out.print(e);
         } catch (JSONException e) {
             System.out.print(e);
         }
