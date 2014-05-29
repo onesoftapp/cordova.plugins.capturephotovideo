@@ -121,8 +121,10 @@ public class CapturePhotoVideo extends CordovaPlugin {
 
     private String encodeFileToBase64String(String filename) throws IOException {
         File file = new File(filename);
+        FileInputStream stream = null;
 
-        try (FileInputStream stream = new FileInputStream(file)) {
+        try {
+            stream = new FileInputStream(file);
             byte[] bytes = new byte[(int)file.length];
 
             if (bytes.length == stream.read(bytes, 0, bytes.length)) {
@@ -131,6 +133,8 @@ public class CapturePhotoVideo extends CordovaPlugin {
 
                 return encodedString;
             }
+        } finally {
+            stream.close();
         }
     }
 
