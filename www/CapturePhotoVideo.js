@@ -11,7 +11,7 @@ module.exports = {
 		exec(callback, null, 'CapturePhotoVideo', 'capturePhoto', [option.width, option.height, option.quality]);
 	},
 
-	captureVideo: function(callback) {
+	captureVideo: function(callback, option) {
 		if (!option) option = {};
 		if (!option.width) option.width = 480; //宽
 		if (!option.height) option.height = 480; //高
