@@ -66,7 +66,8 @@ public class CapturePhotoActivity extends ActivitySupport implements
 		int CompressOption = data.getExtras().getInt("CompressOption");
 		int CompressHeight = data.getExtras().getInt("CompressHeight");
 		int CompressWidth = data.getExtras().getInt("CompressWidth");
-		mPreview = new CameraPreview(context,CompressOption,CompressHeight,CompressWidth);
+		mPreview = new CameraPreview(context, CompressOption, CompressHeight,
+				CompressWidth);
 		FrameLayout preview = (FrameLayout) findViewById(Constant.id.camera_preview);
 		preview.addView(mPreview);
 		updateBtn();
@@ -125,20 +126,19 @@ public class CapturePhotoActivity extends ActivitySupport implements
 			camera_preview.setVisibility(View.GONE);
 			AlbumHelper helper = new AlbumHelper(context);
 			dataList = helper.getImagesBucketList(false);
-			if(dataList!=null&&dataList.size()>0){
+			if (dataList != null && dataList.size() > 0) {
 				adapter = new AlbumAdapter(dataList, CapturePhotoActivity.this);
 				listview.setAdapter(adapter);
 				adapter.notifyDataSetChanged();
 				albumLayout.setVisibility(View.VISIBLE);
-			}else{
+			} else {
 				albumLayout.setVisibility(View.VISIBLE);
 				showToast("你的相册是空的,请拍照");
 			}
-			
-			
+
 			break;
 		case Constant.id.camera_btn_main:
-			mPreview.takePhoto(context,btn);
+			mPreview.takePhoto(context, btn);
 			break;
 		case Constant.id.back1_btn:
 			this.finish();

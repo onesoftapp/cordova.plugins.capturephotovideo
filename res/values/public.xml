@@ -25,13 +25,32 @@
     <public id="0x7f050015" name="select_cb" type="id" />
     <public id="0x7f050016" name="select_list_picture" type="id" />
     <public id="0x7f050017" name="text" type="id" />
+    
     <public id="0x7f050018" name="top" type="id" />
-    <public id="0x7f050019" name="top_layout" type="id" />
+    
+    <public id="0x7f050019" name="top_mask" type="id" />
+    <public id="0x7f050020" name="progress" type="id" />
+    <public id="0x7f050021" name="cancel" type="id" />
+    <public id="0x7f050022" name="finishLayOut" type="id" />
+    <public id="0x7f050023" name="finishButton" type="id" />
+    <public id="0x7f050024" name="cameraView" type="id" />
+    <public id="0x7f050025" name="mediaShow" type="id" />
+    
+    <public id="0x7f05001a" name="top_layout" type="id" />
+    <public id="0x7f05001b" name="press" type="id" />
+    <public id="0x7f05001c" name="bottom_mask" type="id" />
+    <public id="0x7f05001d" name="camera_features" type="id" />
+    <public id="0x7f05001e" name="switchCamera" type="id" />
+    <public id="0x7f05001f" name="video_layout" type="id" />
+    
+    
     <public id="0x7f030000" name="activity_album_detail" type="layout" />
     <public id="0x7f030001" name="activity_camera_album" type="layout" />
     <public id="0x7f030002" name="dialog_layout2" type="layout" />
     <public id="0x7f030003" name="item_image_grid" type="layout" />
     <public id="0x7f030004" name="listview_item_album" type="layout" />
+    <public id="0x7f030005" name="activity_capture_album" type="layout" />
+    
     <public id="0x7f020000" name="action_bar_light_glyph_back" type="drawable" />
     <public id="0x7f020001" name="album" type="drawable" />
     <public id="0x7f020002" name="back25" type="drawable" />
@@ -45,4 +64,5 @@
     <public id="0x7f02000a" name="top_bg" type="drawable" />
     <public id="0x7f02000b" name="top_bg2" type="drawable" />
     <public id="0x7f070000" name="Theme_dialog" type="style" />
+    <public id="0x7f090000" name="vine_green" type="color" />
 </resources>

@@ -4,84 +4,107 @@
 	id="cordova.plugins.capturephotovideo"
 	version="0.1.0">
 
-	<name>CapturePhotoVideo</name>
-	<description>CapturePhotoVideo Plugin</description>
-	<author>Onesoft App(onesoftapp@163.com)</author>
-	<keywords>microvideo,photo,video</keywords>
-	<license>Apache 2.0</license>
-	<repo>https://github.com/onesoftapp/cordova.plugins.capturephotovideo.git</repo>
-	<issue>https://github.com/onesoftapp/cordova.plugins.capturephotovideo/issues</issue>
+  <name>CapturePhotoVideo</name>
+  <description>CapturePhotoVideo Plugin</description>
+  <author>Onesoft App(onesoftapp@163.com)</author>
+  <keywords>microvideo,photo,video</keywords>
+  <license>Apache 2.0</license>
+  <repo>https://github.com/onesoftapp/cordova.plugins.capturephotovideo.git</repo>
+  <issue>https://github.com/onesoftapp/cordova.plugins.capturephotovideo/issues</issue>
 
-	<js-module src="www/CapturePhotoVideo.js" name="capturePhotoVideo">
-		<clobbers target="navigator.capturePhotoVideo" />
-	</js-module>
+  <js-module src="www/CapturePhotoVideo.js" name="capturePhotoVideo">
+    <clobbers target="navigator.capturePhotoVideo" />
+  </js-module>
 
-	<!-- android -->
-	<platform name="android">
+  <!-- android -->
+  <platform name="android">
 
-		<source-file src="src/android/ActivitySupport.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/AlbumAdapter.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/AlbumHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/CameraPreview.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/CapturePhotoActivity.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/CapturePhotoVideo.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/Constant.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/CustomeDialog.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/DataBaseHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/DateUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/DBManager.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/GridviewAdapter.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/IActivitySupport.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/ImageBucket.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/ImageItem.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/ImageManager.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/JsonUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/RoundAngleImageView.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/SDCardSQLiteOpenHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/SQLiteTemplate.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/StringUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
-		<source-file src="src/android/Util.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="libs/isoviewer-1.0-RC-25.jar" target-dir="libs" />
+    <source-file src="src/android/ActivitySupport.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/AlbumAdapter.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/AlbumHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/CameraManager.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/CameraPreview.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/CapturePhotoActivity.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/CapturePhotoVideo.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/CaptureVideoActivity.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/Constant.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/CustomeDialog.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/DataBaseHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/DateUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/DBManager.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/GridviewAdapter.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/IActivitySupport.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/ImageBucket.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/ImageItem.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/ImageManager.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/JsonUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/MySurfaceView.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/ProgressView.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/RecorderManager.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/RoundAngleImageView.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/SDCardSQLiteOpenHelper.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/SQLiteTemplate.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/StringUtil.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/Util.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/VerticalSeekBar.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/VGridviewAdapter.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="src/android/VideoItem.java" target-dir="src/cordova/plugins/capturephotovideo" />
+    <source-file src="res/drawable/btn_capture_arrow_default.png" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_arrow_pressed.png" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_arrow.xml" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_front_facing_camera_default.png" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_front_facing_camera_pressed.png" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_front_facing_camera.xml" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_ghost_default.png" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_ghost_pressed.png" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_ghost.xml" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_x_default.png" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_x_pressed.png" target-dir="res/drawable" />
+    <source-file src="res/drawable/btn_capture_x.xml" target-dir="res/drawable" />
+    <source-file src="res/drawable/pai_btn.xml" target-dir="res/drawable" />
+    <source-file src="res/drawable/pp_bg_dialog.xml" target-dir="res/drawable" />
+    <source-file src="res/drawable/top_bg.xml" target-dir="res/drawable" />
+    <source-file src="res/drawable/top_bg2.xml" target-dir="res/drawable" />
+    <source-file src="res/drawable-hdpi/action_bar_light_glyph_back.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/drawable-hdpi/album.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/drawable-hdpi/back25.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/drawable-hdpi/back40.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/drawable-hdpi/pai50.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/drawable-hdpi/pai90.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/drawable-hdpi/pai_pressed.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/layout/activity_album_detail.xml" target-dir="res/layout" />
+    <source-file src="res/layout/activity_camera_album.xml" target-dir="res/layout" />
+    <source-file src="res/layout/activity_capture_album.xml" target-dir="res/layout" />
+    <source-file src="res/layout/dialog_layout2.xml" target-dir="res/layout" />
+    <source-file src="res/layout/item_image_grid.xml" target-dir="res/layout" />
+    <source-file src="res/layout/listview_item_album.xml" target-dir="res/layout" />
+    <source-file src="res/values/attr.xml" target-dir="res/values" />
+    <source-file src="res/values/color.xml" target-dir="res/values" />
+    <source-file src="res/values/dimens.xml" target-dir="res/values" />
+    <source-file src="res/values/ids.xml" target-dir="res/values" />
+    <source-file src="res/values/public.xml" target-dir="res/values" />
+    <source-file src="res/values/styles.xml" target-dir="res/values" />
 
-		<source-file src="res/drawable/pai_btn.xml" target-dir="res/drawable" />
-		<source-file src="res/drawable/pp_bg_dialog.xml" target-dir="res/drawable" />
-		<source-file src="res/drawable/top_bg.xml" target-dir="res/drawable" />
-		<source-file src="res/drawable/top_bg2.xml" target-dir="res/drawable" />
-		<source-file src="res/drawable-hdpi/action_bar_light_glyph_back.png" target-dir="res/drawable-hdpi" />
-		<source-file src="res/drawable-hdpi/album.png" target-dir="res/drawable-hdpi" />
-		<source-file src="res/drawable-hdpi/back25.png" target-dir="res/drawable-hdpi" />
-		<source-file src="res/drawable-hdpi/back40.png" target-dir="res/drawable-hdpi" />
-		<source-file src="res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-hdpi" />
-		<source-file src="res/drawable-hdpi/pai50.png" target-dir="res/drawable-hdpi" />
-		<source-file src="res/drawable-hdpi/pai90.png" target-dir="res/drawable-hdpi" />
-		<source-file src="res/drawable-hdpi/pai_pressed.png" target-dir="res/drawable-hdpi" />
-		<source-file src="res/layout/activity_album_detail.xml" target-dir="res/layout" />
-		<source-file src="res/layout/activity_camera_album.xml" target-dir="res/layout" />
-		<source-file src="res/layout/dialog_layout2.xml" target-dir="res/layout" />
-		<source-file src="res/layout/item_image_grid.xml" target-dir="res/layout" />
-		<source-file src="res/layout/listview_item_album.xml" target-dir="res/layout" />
-		<source-file src="res/values/attr.xml" target-dir="res/values" />
-		<source-file src="res/values/ids.xml" target-dir="res/values" />
-		<source-file src="res/values/public.xml" target-dir="res/values" />
-		<source-file src="res/values/styles.xml" target-dir="res/values" />
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-feature android:name="android.hardware.camera" />
+      <uses-feature android:name="android.hardware.camera.autofocus" />
+      <uses-permission android:name="android.permission.CAMERA" />
+      <uses-permission android:name="android.permission.RECORD_AUDIO" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
 
-		<config-file target="AndroidManifest.xml" parent="/manifest">
-			<uses-feature android:name="android.hardware.camera" />
-			<uses-feature android:name="android.hardware.camera.autofocus" />
-			<uses-permission android:name="android.permission.CAMERA" />
-			<uses-permission android:name="android.permission.RECORD_AUDIO" />
-			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-		</config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="cordova.plugins.capturephotovideo.CapturePhotoActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+    </config-file>
 
-		<config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<activity android:name="cordova.plugins.capturephotovideo.CapturePhotoActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-		</config-file>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CapturePhotoVideo">
+        <param name="android-package" value="cordova.plugins.capturephotovideo.CapturePhotoVideo" />
+      </feature>
+    </config-file>
 
-		<config-file target="res/xml/config.xml" parent="/*">
-			<feature name="CapturePhotoVideo">
-				<param name="android-package" value="cordova.plugins.capturephotovideo.CapturePhotoVideo" />
-			</feature>
-		</config-file>
-
-	</platform>
+  </platform>
 
 </plugin>

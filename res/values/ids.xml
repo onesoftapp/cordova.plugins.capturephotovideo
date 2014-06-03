@@ -26,6 +26,17 @@
     <item name="select_list_picture" type="id"/>
     <item name="text" type="id"/>
     <item name="top" type="id"/>
+    <item name="top_mask" type="id"/> 
+    <item name="progress" type="id"/>
+    <item name="cancel" type="id"/>
+    <item name="finishLayOut" type="id"/>
+    <item name="finishButton" type="id"/>
+    <item name="cameraView" type="id"/>
+    <item name="mediaShow" type="id"/>
     <item name="top_layout" type="id"/>
-
+    <item name="press" type="id"/>
+    <item name="bottom_mask" type="id"/>
+    <item name="camera_features" type="id"/>
+    <item name="switchCamera" type="id"/>
+    <item name="video_layout" type="id"/>
 </resources>

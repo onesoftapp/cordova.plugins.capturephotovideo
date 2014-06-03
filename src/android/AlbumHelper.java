@@ -19,9 +19,15 @@ public class AlbumHelper {
 	List<HashMap<String, String>> albumList = new ArrayList<HashMap<String, String>>();
 	HashMap<String, ImageBucket> bucketList = new HashMap<String, ImageBucket>();
 	List<ImageItem> list;
+	List<VideoItem> vlist;
+	
 
 	public AlbumHelper(Context context) {
 		list = ImageManager.getInstance(context).getAllImageList();
+	}
+
+	public AlbumHelper(Context context, boolean b) {
+		vlist = ImageManager.getInstance(context).getAllVideoList();
 	}
 
 	/**
@@ -43,6 +49,11 @@ public class AlbumHelper {
 			return null;
 		}
 		
+	}
+
+	public List<VideoItem> getVideoList(boolean b) {
+		
+		return vlist;
 	}
 
 }

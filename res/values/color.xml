@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="solid_black">#ff000000</color>
+    <color name="bg_capture_progress">#ff000000</color>
+    <color name="vine_green">#ff00b589</color>
+    <color name="capture_background">#ff000000</color>
+
+</resources>

@@ -1,0 +1,190 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/solid_black"
+    tools:context=".Activity_CaptureAndAlbum" >
+
+    <RelativeLayout
+        android:id="@id/root_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:id="@id/top_mask"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/capture_top_mask" >
+
+            <cordova.plugins.capturephotovideo.ProgressView
+                android:id="@id/progress"
+                android:layout_width="fill_parent"
+                android:layout_height="48.0dip"
+                android:background="@color/bg_capture_progress" />
+
+            <LinearLayout
+                android:id="@id/cancel"
+                android:layout_width="56.0dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:onClick="onBackPressed" >
+
+                <Button
+                    android:id="@id/back1_btn"
+                    android:layout_width="32.0dip"
+                    android:layout_height="32.0dip"
+                    android:background="@drawable/btn_capture_x"
+                    android:onClick="onBackPressed" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="56.0dip"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@id/switchCamera"
+                    android:layout_width="32.dip"
+                    android:layout_height="32dip"
+                    android:background="@drawable/btn_capture_front_facing_camera"
+                    android:onClick="onCameraSwitchPressed" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/finishLayOut"
+                android:layout_width="56.0dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:onClick="onFinishPressed"
+                android:visibility="visible" >
+
+                <Button
+                    android:id="@id/finishButton"
+                    android:layout_width="32.0dip"
+                    android:layout_height="32.0dip"
+                    android:background="@drawable/btn_capture_arrow"
+                    android:onClick="onFinishPressed" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <cordova.plugins.capturephotovideo.MySurfaceView
+            android:id="@id/cameraView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/top_mask"
+            android:layout_centerInParent="true" />
+
+        <VideoView
+            android:id="@id/mediaShow"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/bottom_mask"
+            android:layout_below="@id/top_mask"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:id="@id/bottom_mask"
+            android:layout_width="fill_parent"
+            android:layout_height="100.0dip"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/capture_background" >
+
+            <RelativeLayout
+                android:id="@id/video_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:visibility="visible" >
+
+                <Button
+                    android:id="@id/camera_features"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/pai_btn" />
+
+                <cordova.plugins.capturephotovideo.RoundAngleImageView
+                    android:id="@id/ablum_btn_main"
+                    android:layout_width="60.0dp"
+                    android:layout_height="60.0dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="25dip"
+                    android:layout_toLeftOf="@id/camera_btn_main"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/ablum_btn_main"
+                    android:layout_below="@id/ablum_btn_main"
+                    android:layout_marginLeft="13.0dp"
+                    android:layout_marginTop="10.0dp"
+                    android:text="视库"
+                    android:textColor="@android:color/white"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@id/select_list_picture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:id="@id/top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/top_bg"
+                android:padding="10.0dip" >
+
+                <Button
+                    android:id="@id/back3_btn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/back25" />
+
+                <TextView
+                    android:id="@id/complete_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="完成"
+                    android:textColor="#00FF00"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <GridView
+                android:id="@id/gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/top"
+                android:layout_margin="8dp"
+                android:horizontalSpacing="8dp"
+                android:numColumns="3"
+                android:scrollbars="none"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="8dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/gridview" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

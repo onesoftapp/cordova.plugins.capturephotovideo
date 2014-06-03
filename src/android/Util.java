@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -45,7 +46,7 @@ public class Util {
 
 		File mediaStorageDir = null;
 		if (type == Constant.IMAGE_PICTURE) {
-			mediaStorageDir = new File(Constant.IMAGE_PATH,"MyCameraApp");
+			mediaStorageDir = new File(Constant.IMAGE_PATH, "MyCameraApp");
 
 			if (!mediaStorageDir.exists()) {
 				if (!mediaStorageDir.mkdirs()) {
@@ -53,7 +54,7 @@ public class Util {
 				}
 			}
 		} else if (type == Constant.IMAGE_THUMB) {
-			mediaStorageDir = new File(Constant.IMAGE_PATH,"thumb");
+			mediaStorageDir = new File(Constant.IMAGE_PATH, "thumb");
 			if (!mediaStorageDir.exists()) {
 				if (!mediaStorageDir.mkdirs()) {
 					return null;
@@ -175,6 +176,28 @@ public class Util {
 			return null;
 		}
 
+	}
+	/**
+	 * 得到最新拍的照片
+	 * */
+	public static Bitmap getVideoPhoto(Context context) {
+		List<VideoItem> list = ImageManager.getInstance(context)
+				.getAllVideoList();
+		if (list != null && list.size() > 0) {
+			String imagepath = list.get(list.size() - 1).getThumbnailPath();
+			Bitmap bmp = null;
+			try {
+				InputStream fis = new FileInputStream(new File(imagepath));
+				bmp = BitmapFactory.decodeStream(fis);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return bmp;
+		} else {
+			return null;
+		}
+		
 	}
 
 	public static Bitmap toRoundCorner(Bitmap bitmap, int pixels) {
@@ -306,5 +329,18 @@ public class Util {
 		item.setTime(DateUtil.date2Str(new Date()));
 		item.setIsSelect(1);
 		ImageManager.getInstance(context).saveImage(item);
+	}
+
+	public static void saveVideoThumbnail(Context context, String videopath,
+			String thumbnail) {
+		File video = new File(videopath);
+		VideoItem item = new VideoItem();
+		item.setTitle(video.getName());
+		item.setVideoPath(videopath);
+		item.setThumbnailPath(thumbnail);
+		item.setTime(DateUtil.date2Str(new Date()));
+		item.setIsSelect(1);
+		ImageManager.getInstance(context).saveVideo(item);
+
 	}
 }

@@ -22,6 +22,7 @@ public class DataBaseHelper extends SDCardSQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("CREATE TABLE [image_item]  ([_id] INTEGER NOT NULL  PRIMARY KEY AUTOINCREMENT, [title] NVARCHAR, [bucket_name] NVARCHAR, [thumbnail_path] NVARCHAR, [image_path] NVARCHAR, [isselect] INTEGER, [image_time] TEXT);");
+		db.execSQL("CREATE TABLE [video_item]  ([_id] INTEGER NOT NULL  PRIMARY KEY AUTOINCREMENT, [title] NVARCHAR, [thumbnail_path] NVARCHAR, [video_path] NVARCHAR, [isselect] INTEGER, [video_time] TEXT);");
 	}
 
 	@Override

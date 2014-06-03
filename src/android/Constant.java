@@ -17,7 +17,7 @@ public class Constant {
 			.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);// 图片存放路径
 	public static final String DATABASE_PATH = android.os.Environment
 			.getExternalStorageDirectory().getAbsolutePath()
-			+ "/albumAndCamera/database/";// 数据库存放路径
+			+ "/mycapture/database/";// 数据库存放路径
 
 	public static final class drawable {
 		public static final int action_bar_light_glyph_back = 0x7f020000;
@@ -65,7 +65,19 @@ public class Constant {
 		public static final int select_list_picture = 0x7f050016;
 		public static final int text = 0x7f050017;
 		public static final int top = 0x7f050018;
-		public static final int top_layout = 0x7f050019;
+		public static final int top_mask = 0x7f050019;
+		public static final int progress = 0x7f050020;
+		public static final int cancel=0x7f050021;
+		public static final int finishLayOut = 0x7f050022;
+		public static final int finishButton=0x7f050023;
+		public static final int cameraView = 0x7f050024;
+		public static final int mediaShow = 0x7f050025;
+		public static final int top_layout = 0x7f05001a;
+		public static final int press=0x7f05001b;
+		public static final int bottom_mask = 0x7f05001c;
+		public static final int camera_features = 0x7f05001d;
+		public static final int switchCamera = 0x7f05001e;
+		public static final int video_layout=0x7f05001f;
 	}
 
 	public static final class layout {
@@ -74,6 +86,7 @@ public class Constant {
 		public static final int dialog_layout2 = 0x7f030002;
 		public static final int item_image_grid = 0x7f030003;
 		public static final int listview_item_album = 0x7f030004;
+		public static final int activity_capture_album = 0x7f030005;
 	}
 
 	public static final class styleable {
@@ -85,5 +98,9 @@ public class Constant {
 
 		public static final int RoundAngleImageView_roundWidth = 0;
 	};
+
+	public static final class color {
+		public static final int vine_green = 0x7f090000;
+	}
 
 }
